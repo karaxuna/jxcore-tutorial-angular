@@ -111,12 +111,14 @@ app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc
 
 Add angular template html to `index.html` body:
 
-    <div ng-controller="indexCtrl">
-        <button type="button" ng-click="callServerFunction()"> Call server function </button>
-        <div ng-if="result">
-            Response: {{result}}
-        </div>
+```html
+<div ng-controller="indexCtrl">
+    <button type="button" ng-click="callServerFunction()"> Call server function </button>
+    <div ng-if="result">
+        Response: {{result}}
     </div>
+</div>
+```
 
 Now let's add jxcore file `jxcore/app.js`:
 
