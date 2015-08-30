@@ -1,6 +1,6 @@
 **Creating basic JXCore application with angular**
 
-See repository for completed demo: https://github.com/karaxuna/jxcore-tutorial-angular
+See repository for completed [demo](https://github.com/karaxuna/jxcore-tutorial-angular).
 
 Supposing you already have installed node package manager (npm), first step is to install cordova:
 
@@ -10,7 +10,7 @@ Then create basic cordova application and name it "jxcore-tutorial-angular":
 
     cordova create jxcore-tutorial-angular
 
-Next step is to add jxcore plugin to project. Download an install JXcore: http://jxcore.com/downloads/. Then install `download-cli`:
+Next step is to add jxcore plugin to project. [Download](http://jxcore.com/downloads/) and install JXcore. Then install `download-cli`:
 
     npm install -g download-cli
 
