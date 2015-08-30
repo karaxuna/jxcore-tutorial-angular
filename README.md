@@ -1,6 +1,7 @@
 **Creating basic JXCore application with angular**
 
 See repository for completed demo: https://github.com/karaxuna/jxcore-tutorial-angular
+
 Supposing you already have installed node package manager (npm), first step is to install cordova:
 
     npm install -g cordova
@@ -120,3 +121,7 @@ Add platforms:
 
     cordova platforms add android
     cordova platforms add ios
+    
+Run:
+
+    cordova run
