@@ -43,62 +43,68 @@ All html/js/css files are stored in `www` folder. When app is started, `www/inde
 
 We have included all necessary libraries. Let's create `js/index.js` main file where we will run angular application:
 
-    // create main angular module
-    var app = angular.module('app', []);
+```javascript
+// create main angular module
+var app = angular.module('app', []);
     
-    //...
+//...
 
-    // log notifications on interface
-    function log(txt) {
-        var el = document.createElement('div');
-        el.textContent = txt;
-        document.body.appendChild(el);
+// log notifications on interface
+function log(txt) {
+    var el = document.createElement('div');
+    el.textContent = txt;
+    document.body.appendChild(el);
+}
+
+// start angular after jxcore is ready
+(function check() {
+    if (typeof jxcore === 'undefined') {
+        setTimeout(check, 5);
+    } else {
+        jxcore('app.js').loadMainFile(function(ret, err) {
+            if (err) {
+                log(err);
+            } else {
+                angular.bootstrap(document, [app.name]);
+            }
+        });
     }
-
-    // start angular after jxcore is ready
-    (function check() {
-        if (typeof jxcore === 'undefined') {
-            setTimeout(check, 5);
-        } else {
-            jxcore('app.js').loadMainFile(function(ret, err) {
-                if (err) {
-                    log(err);
-                } else {
-                    angular.bootstrap(document, [app.name]);
-                }
-            });
-        }
-    })();
+})();
+```
 
 On the first line, we create angular module named "app" with empty dependency list. Then we wait for loading jxcore and after that initializing angular app. Now let's add logic to application, creating factory and controller:
 
 Factory:
 
-    app.factory('jxcoreSrvc', ['$q', '$rootScope', function (q, rootScope) {
-        return {
-            callAsyncFunction: function (name, data) {
-                var defered = q.defer();
-                jxcore(name).call(data, function(result, err){
-                    if (err) {
-                        defered.reject(err);
-                    } else {
-                        defered.resolve(result);
-                    }
-                });
-                return defered.promise;
-            }
-        };
-    }]);
+```javascript
+app.factory('jxcoreSrvc', ['$q', '$rootScope', function (q, rootScope) {
+    return {
+        callAsyncFunction: function (name, data) {
+            var defered = q.defer();
+            jxcore(name).call(data, function(result, err){
+                if (err) {
+                    defered.reject(err);
+                } else {
+                    defered.resolve(result);
+                }
+            });
+            return defered.promise;
+        }
+    };
+}]);
+```
 
 Controller:
 
-    app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc) {
-        scope.callServerFunction = function () {
-            jxcoreSrvc.callAsyncFunction('serverFunction', 'foo').then(function (result) {
-                scope.result = result;
-            });
-        };
-    }]);
+```javascript
+app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc) {
+    scope.callServerFunction = function () {
+        jxcoreSrvc.callAsyncFunction('serverFunction', 'foo').then(function (result) {
+            scope.result = result;
+        });
+    };
+}]);
+```
 
 Add angular template html to `index.html` body:
 
@@ -111,11 +117,13 @@ Add angular template html to `index.html` body:
 
 Now let's add jxcore file `jxcore/app.js`:
 
-    Mobile('serverFunction').registerAsync(function(message, callback){
-        setTimeout(function() {
-            callback(message + ' bar');
-        }, 500);
-    });
+```javascript
+Mobile('serverFunction').registerAsync(function(message, callback){
+    setTimeout(function() {
+        callback(message + ' bar');
+    }, 500);
+});
+```
 
 Add platforms:
 
