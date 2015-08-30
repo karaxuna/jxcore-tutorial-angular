@@ -29,17 +29,20 @@ Add plugin:
 
 All html/js/css files are stored in `www` folder. When app is started, `www/index.html` file is displayed (you can change this from `config.xml`). Let's empty `www` folder and create new `index.html` file with following content:
 
-    <html>
-        <head>
-            <title>Hello Angular</title>
-        </head>
-        <body>
-            <script type="text/javascript" src="cordova.js"></script>
-            <script type="text/javascript" src="jxcore.js"></script>
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-        </body>
-    </html>
+```html
+<html>
+    <head>
+        <title>Hello Angular</title>
+    </head>
+   <body>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="jxcore.js"></script>
+        <script type="text/javascript"
+         src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+```
 
 We have included all necessary libraries. Let's create `js/index.js` main file where we will run angular application:
 
