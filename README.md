@@ -36,7 +36,7 @@ All html/js/css files are stored in `www` folder. When app is started, `www/inde
         <body>
             <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" src="jxcore.js"></script>
-            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular   .min.js"></script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
             <script type="text/javascript" src="js/index.js"></script>
         </body>
     </html>
