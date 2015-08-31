@@ -2,7 +2,7 @@
 var app = angular.module('app', []);
 
 // create factory that calls server functions
-app.factory('jxcoreSrvc', ['$q', '$rootScope', function (q, rootScope) {
+app.factory('jxcoreSrvc', ['$q', function (q) {
     return {
         callAsyncFunction: function (name, data) {
             var defered = q.defer();
