@@ -1,4 +1,4 @@
-# Creating basic JXCore application with angular
+# Creating basic JXcore application with angular
 
 ***See [repository](https://github.com/karaxuna/jxcore-tutorial-angular) for completed demo.***
 
