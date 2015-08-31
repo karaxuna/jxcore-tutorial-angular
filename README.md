@@ -81,7 +81,7 @@ On the first line, we create angular module named "app" with empty dependency li
 Factory called "jxcoreSrvc" that is used to call server side functions:
 
 ```javascript
-app.factory('jxcoreSrvc', ['$q', '$rootScope', function (q, rootScope) {
+app.factory('jxcoreSrvc', ['$q', function (q) {
     return {
         callAsyncFunction: function (name, data) {
             var defered = q.defer();
