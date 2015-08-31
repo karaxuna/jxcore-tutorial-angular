@@ -1,6 +1,6 @@
 # Creating basic JXCore application with angular
 
-*See repository for completed [demo](https://github.com/karaxuna/jxcore-tutorial-angular).*
+***See repository for completed [demo](https://github.com/karaxuna/jxcore-tutorial-angular).***
 
 
 Supposing you already have installed node package manager (npm), first step is to install cordova:
@@ -78,7 +78,7 @@ function log(txt) {
 
 On the first line, we create angular module named "app" with empty dependency list. Then we wait for loading jxcore and after that initializing angular app. Now let's add logic to application, creating factory and controller:
 
-Factory:
+Factory called "jxcoreSrvc" that is used to call server side functions:
 
 ```javascript
 app.factory('jxcoreSrvc', ['$q', '$rootScope', function (q, rootScope) {
@@ -98,7 +98,7 @@ app.factory('jxcoreSrvc', ['$q', '$rootScope', function (q, rootScope) {
 }]);
 ```
 
-Controller:
+Controller where server function is called on button click with `jxcoreSrvc` service created before, passing "foo" as a parameter:
 
 ```javascript
 app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc) {
