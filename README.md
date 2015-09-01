@@ -136,4 +136,8 @@ Add platforms:
     
 Run:
 
-    cordova run
+    cordova run android
+    
+or
+    
+    cordova run ios
