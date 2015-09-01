@@ -60,7 +60,7 @@ var app = angular.module('app', []);
         setTimeout(check, 5);
     } else {
         jxcore.isReady(function () {
-            jxcore('app.js').loadMainFile(function(err) {
+            jxcore('app.js').loadMainFile(function(ret, err) {
                 if (err) {
                     alert(err);
                 } else {
@@ -81,7 +81,7 @@ app.factory('jxcoreSrvc', ['$q', function (q) {
     return {
         callAsyncFunction: function (name, data) {
             var defered = q.defer();
-            jxcore(name).call(data, function(err, result){
+            jxcore(name).call(data, function(result, err){
                 if (err) {
                     defered.reject(err);
                 } else {
