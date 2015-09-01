@@ -1,4 +1,4 @@
-# Creating basic nodejs application with JXcore and angular
+### Tutorial: node.js mobile application with JXcore and Angular
 
 ![Demo screenshot](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-angular/master/screen.png "Demo screenshot")
 
