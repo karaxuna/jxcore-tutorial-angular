@@ -6,7 +6,7 @@ app.factory('jxcoreSrvc', ['$q', function (q) {
     return {
         callAsyncFunction: function (name, data) {
             var defered = q.defer();
-            jxcore(name).call(data, function(result, err){
+            jxcore(name).call(data, function(err, result){
                 if (err) {
                     defered.reject(err);
                 } else {
@@ -24,30 +24,24 @@ app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc
         jxcoreSrvc.callAsyncFunction('serverFunction', 'foo').then(function (result) {
             scope.result = result;
         }, function (err) {
-            log('Client error: ' + err);
+            alert(err);
         });
     };
 }]);
-
-// log notifications on interface
-function log(txt) {
-    var el = document.createElement('div');
-    el.textContent = txt;
-    document.body.appendChild(el);
-}
 
 // start angular after jxcore is ready
 (function check() {
     if (typeof jxcore === 'undefined') {
         setTimeout(check, 5);
     } else {
-        jxcore('log').register(log);
-        jxcore('app.js').loadMainFile(function(ret, err) {
-            if (err) {
-                log(err);
-            } else {
-                angular.bootstrap(document, [app.name]);
-            }
+        jxcore.isReady(function () {
+            jxcore('app.js').loadMainFile(function(err) {
+                if (err) {
+                    alert(err);
+                } else {
+                    angular.bootstrap(document, [app.name]);
+                }
+            });
         });
     }
 })();

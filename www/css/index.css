@@ -13,26 +13,22 @@ body {
     display: none;
 }
 
-.cmd > .p {
+.cmd > .txt {
+    display: block;
     position: relative;
-    padding-left: 15px;
     font-size: 16px;
-}
-
-.cmd > .p:before {
-    content: '>';
-    position: absolute;
-    left: 2px;
-    font-family: monospace;
-}
-
-.cmd > .p > .txt {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 15px;
     border: none;
     background-color: transparent;
     font-family: monospace;
     color: inherit;
-    font-size: inherit;
     outline: 0;
+}
+
+.cmd > .txt:before {
+    content: '>';
+    position: absolute;
+    left: 2px;
+    font-family: monospace;
 }

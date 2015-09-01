@@ -5,13 +5,11 @@
     </head>
     <body>
         <div ng-controller="indexCtrl" class="cmd" ng-class="'loaded'">
-            <div class="p">
-                <button type="button" ng-click="callServerFunction()" class="txt">
-                    Tap to call server function
-                </button>
-            </div>
-            <div ng-if="result" class="p">
-                <span class="txt"> Server response: {{result}} </span>
+            <button type="button" ng-click="callServerFunction()" class="txt">
+                Tap to call server function
+            </button>
+            <div ng-if="result" class="txt">
+                Server response: {{result}}
             </div>
         </div>
 
