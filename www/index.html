@@ -1,12 +1,17 @@
 <html>
     <head>
         <title>Hello Angular</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
     <body>
-        <div ng-controller="indexCtrl">
-            <button type="button" ng-click="callServerFunction()"> Call server function </button>
-            <div ng-if="result">
-                Response: {{result}}
+        <div ng-controller="indexCtrl" class="cmd" ng-class="'loaded'">
+            <div class="p">
+                <button type="button" ng-click="callServerFunction()" class="txt">
+                    Tap to call server function
+                </button>
+            </div>
+            <div ng-if="result" class="p">
+                <span class="txt"> Server response: {{result}} </span>
             </div>
         </div>
 

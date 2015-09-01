@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #272822;
+}
+
+.cmd {
+    color: white;
+    height: 100%;
+}
+
+.cmd:not(.loaded) {
+    display: none;
+}
+
+.cmd > .p {
+    position: relative;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.cmd > .p:before {
+    content: '>';
+    position: absolute;
+    left: 2px;
+    font-family: monospace;
+}
+
+.cmd > .p > .txt {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-family: monospace;
+    color: inherit;
+    font-size: inherit;
+    outline: 0;
+}

@@ -22,12 +22,10 @@ app.factory('jxcoreSrvc', ['$q', function (q) {
 app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc) {
     scope.callServerFunction = function () {
         jxcoreSrvc.callAsyncFunction('serverFunction', 'foo').then(function (result) {
-            log('Client: Answer received - ' + result);
             scope.result = result;
         }, function (err) {
             log('Client error: ' + err);
         });
-        log('Client: Server function called');
     };
 }]);
 
@@ -43,7 +41,6 @@ function log(txt) {
     if (typeof jxcore === 'undefined') {
         setTimeout(check, 5);
     } else {
-        log('Client: JXcore is loaded.');
         jxcore('log').register(log);
         jxcore('app.js').loadMainFile(function(ret, err) {
             if (err) {
