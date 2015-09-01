@@ -1,5 +1,7 @@
 # Creating basic nodejs application with JXcore and angular
 
+![Demo screenshot](https://raw.githubusercontent.com/karaxuna/jxcore-tutorial-angular/master/screen.png "Demo screenshot")
+
 ***See [repository](https://github.com/karaxuna/jxcore-tutorial-angular) for completed demo.***
 
 [Download](http://jxcore.com/downloads/) and install JXcore, then install cordova:
