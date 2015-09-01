@@ -46,7 +46,7 @@ All html/js/css files are stored in `www` folder. When app is started, `www/inde
 </html>
 ```
 
-We have included all necessary libraries. Let's create `js/index.js` main file where we will run angular application:
+There you have all the necessary files are in place. Let’s create js/index.js main file where the core of angular application resides:
 
 ```javascript
 // create main angular module
@@ -72,7 +72,7 @@ var app = angular.module('app', []);
 })();
 ```
 
-On the first line, we create angular module named "app" with empty dependency list. Then we wait for loading jxcore and after that initializing angular app. Now let's add logic to application, creating factory and controller:
+On the first line, we create angular module named "app" with empty dependency list. Then we are loading `app.js` file, which is JXcore main file located in `www/jxcore` folder. After that we are ready to start angular manually with `angular.bootstrap` method. Now let's add logic to the application, creating factory and controller:
 
 Factory called "jxcoreSrvc" that is used to call server side functions:
 
@@ -136,4 +136,8 @@ Add platforms:
     
 Run:
 
-    cordova run
+    cordova run android
+    
+or
+    
+    cordova run ios
