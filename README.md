@@ -46,7 +46,7 @@ All html/js/css files are stored in `www` folder. When app is started, `www/inde
 </html>
 ```
 
-There you have all the necessary files are in place. Let’s create js/index.js main file where the core of angular application resides.
+There you have all the necessary files are in place. Let’s create js/index.js main file where the core of angular application resides:
 
 ```javascript
 // create main angular module
