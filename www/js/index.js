@@ -35,7 +35,7 @@ app.controller('indexCtrl', ['$scope', 'jxcoreSrvc', function (scope, jxcoreSrvc
         setTimeout(check, 5);
     } else {
         jxcore.isReady(function () {
-            jxcore('app.js').loadMainFile(function(err) {
+            jxcore('app.js').loadMainFile(function(result, err) {
                 if (err) {
                     alert(err);
                 } else {
